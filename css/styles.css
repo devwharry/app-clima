@@ -10,6 +10,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+    background-position: center;
+    background-size: cover;
 }
 
 .hide {
@@ -22,6 +25,8 @@ body {
     padding: 2rem;
     color: #fdfdfd;
     border-radius: 1rem;
+    border-radius: 1rem;
+    max-width: 400px;
 }
 
 .form h3 {
@@ -36,6 +41,7 @@ body {
     padding: 0.8rem;
     border: none;
     flex: 1;
+    border-radius: 4px;
 }
 
 .form button {
@@ -49,8 +55,10 @@ body {
     cursor: pointer;
 }
 
-#weather-data {
-    border-top: 3px solid #fff;
+#weather-data,
+#error-message,
+#loader {
+    border-top: 2px solid #fff;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     text-align: center;
@@ -67,12 +75,16 @@ body {
     font-size: 1rem;
 }
 
-#weather-data h2 span {
+#weather-data span {
     margin: 0.6rem;
 }
 
+#temperature {
+    font-size: 4rem;
+}
+
 #country {
-    height: 15px;
+    height: 50px;
 }
 
 #description-container {
@@ -82,14 +94,30 @@ body {
     margin: 0.6rem 0;
 }
 
+#description {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
 #details-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#details-container #umidity {
+#details-container #humidity {
     border-right: 2px solid #fff;
     margin: 0.6rem;
     padding: 0.6rem;
+}
+
+/* Loader */
+#loader i {
+    animation: rotate 1.5s linear infinite;
+  }
+  
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
 }
